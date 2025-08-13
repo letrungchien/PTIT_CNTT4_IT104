@@ -22,10 +22,7 @@ class Manager extends Employee{
         this.teamSize=teamSize
     }
     printInfo(): void {
-        console.log(`Name: ${this.name} Company :${this.company} Phone : ${this.getPhone()} Team size :${this.teamSize}`);
+        console.log(`Name: ${this.name} Company :${this.company} Phone : ${this.getPhone} `);
         
     }
 }
-
-let manager =new Manager("chien","TNHH","0437",9);
-manager.printInfo();
