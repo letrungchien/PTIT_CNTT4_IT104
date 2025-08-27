@@ -44,7 +44,7 @@ export default function Bai9() {
   };
   function countCompletedJobs() {
   return jobs.filter(job => job.value).length;
-}
+}=-
 
 
   return (
