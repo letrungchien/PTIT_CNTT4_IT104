@@ -27,4 +27,4 @@ export default function Bai6() {
       <p>Selected gender : {render.selectGender}</p>
     </div>
   )
-}
+} 
