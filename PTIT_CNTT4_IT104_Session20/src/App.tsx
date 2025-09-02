@@ -6,6 +6,7 @@ import Bai4 from './componets/PTIT_CNTT4_IT104_Session20_Bai04/Bai4'
 import Bai5 from './componets/PTIT_CNTT4_IT104_Session20_Bai05/Bai5'
 import Bai6 from './componets/PTIT_CNTT4_IT104_Session20_Bai06/Bai6'
 import Bai7 from './componets/PTIT_CNTT4_IT104_Session20_Bai07/Bai7'
+import Bai8 from './componets/PTIT_CNTT4_IT104_Session20_Bai08/Bai8'
 function App() {
 
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <Bai4></Bai4> */}
       {/* <Bai5></Bai5> */}
       {/* <Bai6></Bai6> */}
-      <Bai7></Bai7>
+      {/* <Bai7></Bai7> */}
+      <Bai8></Bai8>
     </>
   )
 }
