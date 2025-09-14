@@ -12,7 +12,7 @@ import TaskDetail from "./pages/PTIT_CNTT4_IT104_Session27_Bai03/TaskDetail";
 import TaskList from "./pages/PTIT_CNTT4_IT104_Session27_Bai03/TaskList";
 import BlogLayout from "./pages/PTIT_CNTT4_IT104_Session27_Bai05/BlogLayout";
 import Bai6 from "./pages/PTIT_CNTT4_IT104_Session27_Bai06/Bai6";
-gitg
+
 import Home2 from "./pages/PTIT_CNTT4_IT104_Session27_Bai07/Home2";
 import About2 from "./pages/PTIT_CNTT4_IT104_Session27_Bai07/About2";
 import NotFound from "./pages/PTIT_CNTT4_IT104_Session27_Bai07/NotFound";
