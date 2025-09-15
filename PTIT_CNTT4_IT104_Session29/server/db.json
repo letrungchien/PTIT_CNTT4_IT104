@@ -1,0 +1,64 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "product_name": "iphone11",
+      "image": "link/anh",
+      "price": 10000,
+      "quantity": 12,
+      "created_at": "2025-10-15"
+    },
+    {
+      "id": 2,
+      "product_name": "iphone12",
+      "image": "link/anh",
+      "price": 20000,
+      "quantity": 10,
+      "created_at": "2025-10-15"
+    },
+    {
+      "id": 3,
+      "product_name": "iphone13",
+      "image": "data:link/anh",
+      "price": 30000,
+      "quantity": 7,
+      "created_at": "2025-10-15"
+    },
+    {
+      "id": 4,
+      "product_name": "iphone14",
+      "image": "link/anh",
+      "price": 40000,
+      "quantity": 10,
+      "created_at": "2025-10-15"
+    },
+    {
+      "id": 5,
+      "product_name": "iphone15",
+      "image": "link/anh",
+      "price": 50000,
+      "quantity": 11,
+      "created_at": "2025-10-15"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "student_name": "chien",
+      "email": "chien@gmail.com",
+      "address": "Thanh Hoa",
+      "phone": "0123456789",
+      "status": true,
+      "created_at": "2025-10-15"
+    },
+    {
+      "student_name": "t",
+      "email": "t",
+      "address": "t",
+      "phone": "t",
+      "status": true,
+      "created_at": "2025-10-15",
+      "id": 2
+    }
+  ]
+}
