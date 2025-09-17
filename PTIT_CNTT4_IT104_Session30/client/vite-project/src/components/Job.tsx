@@ -131,6 +131,7 @@ export default function Job() {
           Xóa tất cả
         </button>
       </div>
+      <div className="text-white"></div>
     </div>
   )
 }

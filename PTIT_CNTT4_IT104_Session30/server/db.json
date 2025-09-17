@@ -30,5 +30,13 @@
       "status": true,
       "id": 2
     }
+  ],
+  "posts":[
+    {
+      "title":"hoc c",
+      "image":"link",
+      "date":"17/2",
+      "status":true
+    }
   ]
 }
