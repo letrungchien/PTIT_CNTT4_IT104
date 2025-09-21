@@ -13,7 +13,7 @@ export default function Login() {
         setEmail(e.target.value);
     }
     const handlePass = (e:React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value)
+        setPassword(e.target.value) 
     }
     const handleLogin = () => {
         if(reslut.email!== email || reslut.pass !== password){
@@ -29,7 +29,7 @@ export default function Login() {
         <h1>Bài 8</h1>
       <h1 >Dang nhap</h1>
       <input type="text" placeholder="NHập email " onChange={handleEmail} value={email}/>
-      <br />
+      <br />.
       <input type="password" placeholder="Nhập mật khẩu" onChange={handlePass} value={password}/>
       <br />
       <button onClick={handleLogin}>Đăng nhập</button>
