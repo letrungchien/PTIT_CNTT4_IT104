@@ -13,6 +13,42 @@ export const getAllTask= createAsyncThunk("getAllTask" ,
             
         }
     })
+ export const deleteTask =createAsyncThunk("deleteTask",async (id:number)=>{
+    try {
+       await axios.delete(`http://localhost:8080/tasks/${id}`)
+     return id
+    } catch (error) {
+        console.log(error);
+    }
+  })
+  export const check = createAsyncThunk("check",async (newTask:any)=>{
+
+    try {
+        const res =await axios.put(`http://localhost:8080/tasks/${newTask.id}`,newTask)
+        return res.data;
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+export const updateTask = createAsyncThunk("updateTask",async (newTask:any)=>{
+
+    try {
+        const res =await axios.put(`http://localhost:8080/tasks/${newTask.id}`,newTask)
+        return res.data;
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+export const addTask = createAsyncThunk("addTask", async (task: any) => {
+  try {
+    const res = await axios.post("http://localhost:8080/tasks", task);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+});
 
     const taskSlice =createSlice({
         name:"tasks",
@@ -35,6 +71,20 @@ export const getAllTask= createAsyncThunk("getAllTask" ,
                 console.log("lay du leu that bai");
                 
             })
+             .addCase(addTask.fulfilled, (state, action) => {
+        state.tasks.push(action.payload);
+      })
+            .addCase(deleteTask.fulfilled,(state,action)=>{
+                       state.tasks=state.tasks.filter((task:any)=>task.id !== action.payload)
+                   })
+        .addCase(check.fulfilled,(state:any,action)=>{
+        const index= state.tasks.findIndex((item:any)=>item.id==action.payload.id);
+        state.tasks[index]= action.payload;
+    } )
+     .addCase(updateTask.fulfilled,(state:any,action)=>{
+        const index= state.tasks.findIndex((item:any)=>item.id==action.payload.id);
+        state.tasks[index]= action.payload;
+    } )
         }
     })
 
