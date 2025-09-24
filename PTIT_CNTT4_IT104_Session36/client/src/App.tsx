@@ -1,93 +1,79 @@
-// import React from 'react'
-// import StudentManager from './componets/StudentManager'
+// import { useDispatch, useSelector } from 'react-redux';
+// import FilterControls from './componets/FilterControls';
+// import TaskForm from './componets/TaskForm';
+// import TaskItem from './componets/TaskItem';
+// import { useEffect, useState } from 'react';
+// import { getAllTask } from './store/slices/taskSlice';
+// import type { RootState, AppDispatch } from './store/store'; // nhớ import từ store
 
+// const App = () => {
+//   const dispatch = useDispatch<AppDispatch>();
+//   const tasks = useSelector((state: RootState) => state.task.tasks); // lấy từ Redux
 
-// export default function App() {
+//   const [filters, setFilters] = useState({
+//     status: 'all',
+//     priority: 'all',
+//     search: '',
+//   });
+
+//   useEffect(() => {
+//     dispatch(getAllTask()); // gọi API khi load App
+//   }, [dispatch]);
+
+//   const filteredTasks = tasks.filter((t) => {
+//     const matchStatus =
+//       filters.status === 'all' ||
+//       (filters.status === 'completed' && t.completed) ||
+//       (filters.status === 'active' && !t.completed);
+
+//     const matchPriority =
+//       filters.priority === 'all' || t.priority === filters.priority;
+
+//     const matchSearch = t.title.toLowerCase().includes(filters.search.toLowerCase());
+
+//     return matchStatus && matchPriority && matchSearch;
+//   });
+
 //   return (
-//     <div>
-//       {/* <StudentManager/> */}
+//     <div className="max-w-2xl mx-auto p-6 bg-gray-100 min-h-screen">
+//       <h1 className="text-2xl font-bold mb-6 text-center">📝 Task Manager</h1>
 
+//       {/* Form thêm task mới (sẽ dispatch lên Redux) */}
+//       <TaskForm />
 
+//       {/* Bộ lọc */}
+//       <FilterControls
+//         status={filters.status}
+//         priority={filters.priority}
+//         search={filters.search}
+//         onStatusChange={(status) => setFilters({ ...filters, status })}
+//         onPriorityChange={(priority) => setFilters({ ...filters, priority })}
+//         onSearchChange={(search) => setFilters({ ...filters, search })}
+//       />
+
+//       {/* Danh sách task */}
+//       <div>
+//         {filteredTasks.map((task) => (
+//           <TaskItem
+//             key={task.id}
+//             {...task}
+//           />
+//         ))}
+//       </div>
 //     </div>
-//   )
-// }
+//   );
+// };
 
-import FilterControls from './componets/FilterControls';
-import TaskForm from './componets/TaskForm';
-import TaskItem from './componets/TaskItem';
-import { useState } from 'react';
+// export default App;
 
-interface Task {
-  id: string;
-  title: string;
-  completed: boolean;
-  priority: 'low' | 'medium' | 'high';
-}
 
-const App = () => {
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: '1', title: 'Học Redux Toolkit', completed: false, priority: 'high' },
-    { id: '2', title: 'Làm bài tập TS', completed: true, priority: 'medium' },
-  ]);
+import React from 'react'
+import TaskManager from './componets/TaskManager'
 
-  const [filters, setFilters] = useState({
-    status: 'all',
-    priority: 'all',
-    search: '',
-  });
-
-  const handleAdd = (title: string, priority: 'low' | 'medium' | 'high') => {
-    setTasks([
-      ...tasks,
-      { id: Date.now().toString(), title, completed: false, priority },
-    ]);
-  };
-
-  const handleToggle = (id: string) => {
-    setTasks(tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
-  };
-
-  const handleDelete = (id: string) => {
-    setTasks(tasks.filter((t) => t.id !== id));
-  };
-
-  const filteredTasks = tasks.filter((t) => {
-    const matchStatus =
-      filters.status === 'all' ||
-      (filters.status === 'completed' && t.completed) ||
-      (filters.status === 'active' && !t.completed);
-
-    const matchPriority = filters.priority === 'all' || t.priority === filters.priority;
-
-    const matchSearch = t.title.toLowerCase().includes(filters.search.toLowerCase());
-
-    return matchStatus && matchPriority && matchSearch;
-  });
-
+export default function App() {
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6 text-center">📝 Task Manager</h1>
-      <TaskForm onAdd={handleAdd} />
-      <FilterControls
-        status={filters.status}
-        priority={filters.priority}
-        search={filters.search}
-        onStatusChange={(status) => setFilters({ ...filters, status })}
-        onPriorityChange={(priority) => setFilters({ ...filters, priority })}
-        onSearchChange={(search) => setFilters({ ...filters, search })}
-      />
-      <div>
-        {filteredTasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            {...task}
-            onToggle={handleToggle}
-            onDelete={handleDelete}
-          />
-        ))}
-      </div>
+    <div>
+      <TaskManager></TaskManager>
     </div>
-  );
-};
-
-export default App;
+  )
+}
