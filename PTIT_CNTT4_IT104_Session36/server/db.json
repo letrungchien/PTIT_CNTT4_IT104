@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Minh Thư"
+    },
+    {
+      "id": 2,
+      "taskName": "Yên Chi",
+      "completed": true,
+      "priority": "Thấp"
+    },
+    {
+      "id": 3,
+      "name": "Yên Chi"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 19425,
+      "taskName": "Học",
+      "completed": true,
+      "priority": "Cao"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
