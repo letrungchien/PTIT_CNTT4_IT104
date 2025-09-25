@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,4 +21,28 @@
        let b=+prompt("nhap so b");
        caculate(a,b,callbackCaculate);
 </script>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function caculate(a,b,c){
+        let resul =a+b;
+        c(resul);
+    }
+    function callbackCaculate(resul) {
+        console.log("ket qua la ",resul);
+    }
+    let a=+prompt("nhap so a");
+       let b=+prompt("nhap so b");
+       caculate(a,b,callbackCaculate);
+</script>
+>>>>>>> a449ceaeb65d090a6defb22f516d69388f439848
 </html>
