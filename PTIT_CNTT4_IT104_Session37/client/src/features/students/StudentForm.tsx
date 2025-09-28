@@ -42,11 +42,7 @@ const StudentForm: React.FC<Props> = ({ open, initial = {}, onClose }) => {
       grade: grade.trim(),
     };
 
-    if (initial.id) {
-      dispatch(updateStudent(student)); 
-    } else {
-      dispatch(addStudent(student)); 
-    }
+   
 
     onClose();
   };
